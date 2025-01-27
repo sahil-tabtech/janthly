@@ -14,6 +14,7 @@
         "type": "header",
         "settings": {
           "url_home_link": "",
+          "image_nav_logo": "shopify://shop_images/logo.svg",
           "collection_search_bestseller": "",
           "collection_search_bestseller_limit": 6
         }
@@ -21,6 +22,7 @@
       "footer": {
         "type": "footer",
         "settings": {
+          "image_footer_visit_store_background_image": "shopify://shop_images/paint-toys-text-art.png",
           "text_footer_logo_text": "© Janthly 2024",
           "text_newsletter_headline": "Updates on new products or restocks subscribe below"
         }
