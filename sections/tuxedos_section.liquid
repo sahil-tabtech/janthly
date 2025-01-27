@@ -1,0 +1,13 @@
+<div class="trial-grid"><div class="static-elements_wrapper"><div id="Tuxedos-static-ele" class="static-element"><div class="padding-global"><div class="collection-text_wrapper"><p class="text-size-regular">
+{{ section.settings.text_showcase_text }}
+</p>
+<a href="{{ section.settings.url_view_all }}" class="button w-button"> {{ section.settings.text_view_all }} </a>
+</div></div></div></div><div id="w-node-_23348ea3-3c38-aee5-de0c-b65887c5aa32-568c24db" class="product_list-wrapper w-dyn-list"><div id="Tuxedos-product-list" role="list" class="product_list w-dyn-items">{% for product in section.settings.collection_collection.products limit: section.settings.collection_collection_limit %}
+<div role="listitem" class="product_list-item w-dyn-item">
+    
+    {% render 'product_item', product: product %}
+
+    
+</div>
+{% endfor %}
+</div><div class="hide w-dyn-empty"><div>No items found.</div></div></div></div> {% schema %} {"tag":"div","name":"Tuxedos_section","class":"section_showcase","settings":[{"id":"text_showcase_text","type":"text","label":"Showcase - text","default":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare."},{"id":"url_view_all","type":"url","label":"View All"},{"id":"text_view_all","type":"text","label":"View All","default":"Button Text"},{"id":"collection_collection","type":"collection","label":"Collection"},{"type":"range","id":"collection_collection_limit","min":1,"max":99,"step":1,"label":"Limit: Collection","default":6}],"presets":[{"name":"Tuxedos_section","category":"Liquify"}]} {% endschema %}
