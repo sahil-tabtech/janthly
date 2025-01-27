@@ -1,0 +1,36 @@
+{
+    "sections": {
+        "hero": {
+            "type": "hero"
+        },
+        "hero_links": {
+            "type": "hero_links"
+        },
+        "shirts_section": {
+            "type": "shirts_section"
+        },
+        "trousers_section": {
+            "type": "trousers_section"
+        },
+        "suits_section": {
+            "type": "suits_section"
+        },
+        "tuxedos_section": {
+            "type": "tuxedos_section"
+        },
+        "video_showcase": {
+            "type": "video_showcase"
+        }
+    },
+    "layout": "theme",
+    "wrapper": "main.main-wrapper",
+    "order": [
+        "hero",
+        "hero_links",
+        "shirts_section",
+        "trousers_section",
+        "suits_section",
+        "tuxedos_section",
+        "video_showcase"
+    ]
+}
