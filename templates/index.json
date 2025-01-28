@@ -1,36 +1,83 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "hero": {
-            "type": "hero"
-        },
-        "hero_links": {
-            "type": "hero_links"
-        },
-        "shirts_section": {
-            "type": "shirts_section"
-        },
-        "trousers_section": {
-            "type": "trousers_section"
-        },
-        "suits_section": {
-            "type": "suits_section"
-        },
-        "tuxedos_section": {
-            "type": "tuxedos_section"
-        },
-        "video_showcase": {
-            "type": "video_showcase"
-        }
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "text_hero_text": "A contemporary label committed to a clear state-of-the art of attire. We epitomize the ethos of old-money style, weaving a narrative of understated class and enduring refinement into every garment."
+      }
     },
-    "layout": "theme",
-    "wrapper": "main.main-wrapper",
-    "order": [
-        "hero",
-        "hero_links",
-        "shirts_section",
-        "trousers_section",
-        "suits_section",
-        "tuxedos_section",
-        "video_showcase"
-    ]
+    "hero_links": {
+      "type": "hero_links",
+      "settings": {}
+    },
+    "shirts_section": {
+      "type": "shirts_section",
+      "settings": {
+        "text_showcase_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
+        "url_view_all": "",
+        "text_view_all": "Button Text",
+        "collection_collection": "shirts",
+        "collection_collection_limit": 5
+      }
+    },
+    "trousers_section": {
+      "type": "trousers_section",
+      "settings": {
+        "text_showcase_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
+        "url_view_all": "",
+        "text_view_all": "Button Text",
+        "collection_collection": "shirts",
+        "collection_collection_limit": 5
+      }
+    },
+    "suits_section": {
+      "type": "suits_section",
+      "settings": {
+        "text_showcase_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
+        "url_view_all": "",
+        "text_view_all": "Button Text",
+        "collection_collection": "",
+        "collection_collection_limit": 6
+      }
+    },
+    "tuxedos_section": {
+      "type": "tuxedos_section",
+      "settings": {
+        "text_showcase_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
+        "url_view_all": "",
+        "text_view_all": "Button Text",
+        "collection_collection": "",
+        "collection_collection_limit": 6
+      }
+    },
+    "video_showcase": {
+      "type": "video_showcase",
+      "settings": {
+        "text_showcase_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
+        "url_explore_more_link": "",
+        "text_explore_more": "Button Text",
+        "text_showcase_video_title": "Lorem Ipsum"
+      }
+    }
+  },
+  "layout": "theme",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "hero",
+    "hero_links",
+    "shirts_section",
+    "trousers_section",
+    "suits_section",
+    "tuxedos_section",
+    "video_showcase"
+  ]
 }
