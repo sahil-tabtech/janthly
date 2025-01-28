@@ -1,0 +1,12 @@
+{
+    "sections": {
+        "experience": {
+            "type": "experience"
+        }
+    },
+    "layout": "page",
+    "wrapper": "main.main-wrapper",
+    "order": [
+        "experience"
+    ]
+}
