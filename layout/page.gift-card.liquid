@@ -1,5 +1,5 @@
 <!doctype html>
-<html data-wf-page="6787585714306e08568c2553" data-wf-site="6787585714306e08568c2475" lang="{{ request.locale.iso_code }}"><head><meta charset="utf-8">
+<html data-wf-page="6787585714306e08568c254b" data-wf-site="6787585714306e08568c2475" lang="{{ request.locale.iso_code }}"><head><meta charset="utf-8">
 <title>{{ page_title }}</title><meta content="{{ page_description }}" name="description">
 <meta content="{{ page_title }}" property="og:title">
 <meta content="{{ page_description }}" property="og:description">
@@ -51,80 +51,8 @@
 .filter_product-list-item{
  border-top: 1px solid #5E503F99;
 }
-<style><script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "{{ product.title }}",
-       "image": "https:{{ product.featured_image.src | img_url: '1500x1500' }}",
-        "description": "{{ product.description | strip_html }}",
-        "brand": "{{ product.vendor }}",
-        "sku": "{{ product.selected_or_first_available_variant.sku }}",
-        "offers": [
-        {% for variant in product.variants %}{
-          "@type": "Offer",
-          "url": "{{ variant.url }}",
-          "priceCurrency": "EUR",
-          "price": "{{ variant.price | money }}",
-      "priceValidUntil": "{{ 'now' | date: '%s' | plus: 31536000 | date: '%Y-%m-%d' | uri_encode | replace:'+','%20' }}",
-          "availability": "{% if variant.available %}https://schema.org/InStock{% else variant.available == false %}https://schema.org/SoldOut{% endif %}",
-          "itemCondition": "https://schema.org/NewCondition"
-        }{% if forloop.last == false %},{% endif %}{% endfor %}
-        ]
-        }
-    
-    <script type="application/ld+json">
-      {
-         "@context": "https://schema.org",
-         "@type": "BreadcrumbList",
-         "itemListElement":
-         [
-          {
-           "@type": "ListItem",
-           "position": 1,
-           "item":
-           {
-            "@id": "{{ shop.url }}",
-            "name": "Home"
-            }
-          },
-        {
-           "@type": "ListItem",
-           "position": 2,
-           "item":
-           {
-            "@id": "{% if collection.url %}{{ collection.url }}{% else %}{{ product.vendor }}{% endif %}",
-            "name": "{% if collection.url %}{{collection.title }}{% else %}{{ product.vendor }}{% endif %}"
-            }
-          },
-          {
-           "@type": "ListItem",
-          "position": 3,
-          "item":
-           {
-             "@id": "{{ product.url }}",
-             "name": "{{ product.title }}"
-           }
-          }
-         ]
-        }
-    
-    <script type="application/ld+json">
-      {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [{% for fa_qs in shop.metaobjects.fa_qs.values %}{
-            "@type": "Question",
-            "name": "{{ fa_qs.frage }}",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "{{ fa_qs.antwort | metafield_tag | strip_html }}"
-            }
-          }{% if forloop.last == false %},{% endif %}{% endfor %}
-          ]
-        }
-    </style><script src="{{ '_helper.js' | asset_url }}" type="text/javascript"></script>{{ content_for_header }}</head>
-<body li-page="product">
+<style></style><script src="{{ '_helper.js' | asset_url }}" type="text/javascript"></script>{{ content_for_header }}</head>
+<body li-page="giftcard">
 {{ content_for_layout }}
 </body>
 </html>
