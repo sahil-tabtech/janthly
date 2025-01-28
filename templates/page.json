@@ -9,14 +9,22 @@
  */
 {
   "sections": {
-    "experience": {
-      "type": "experience",
+    "category_hero_AGpNr7": {
+      "type": "category_hero",
+      "settings": {
+        "text_heading": "All",
+        "text_paragraph": "the art of attire. We epitomize the ethos of old-money style, weaving a narrative of understated class and enduring refinement into every garment."
+      }
+    },
+    "category_collection_gaRAzf": {
+      "type": "category_collection",
       "settings": {}
     }
   },
   "layout": "page",
   "wrapper": "main.main-wrapper",
   "order": [
-    "experience"
+    "category_hero_AGpNr7",
+    "category_collection_gaRAzf"
   ]
 }
