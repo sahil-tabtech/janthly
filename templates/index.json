@@ -45,8 +45,8 @@
         "text_showcase_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
         "url_view_all": "",
         "text_view_all": "Button Text",
-        "collection_collection": "",
-        "collection_collection_limit": 6
+        "collection_collection": "shirts",
+        "collection_collection_limit": 5
       }
     },
     "tuxedos_section": {
@@ -55,7 +55,7 @@
         "text_showcase_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
         "url_view_all": "",
         "text_view_all": "Button Text",
-        "collection_collection": "",
+        "collection_collection": "shirts",
         "collection_collection_limit": 6
       }
     },
