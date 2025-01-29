@@ -8,5 +8,24 @@
  * ------------------------------------------------------------
  */
 {
-  "current": {}
+  "current": {
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "url_home_link": "/",
+          "collection_search_bestseller": "",
+          "collection_search_bestseller_limit": 6
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "text_footer_logo_text": "© Janthly 2024",
+          "text_newsletter_headline": "Updates on new products or restocks subscribe below"
+        }
+      }
+    },
+    "content_for_index": []
+  }
 }
