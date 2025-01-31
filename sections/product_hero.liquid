@@ -98,6 +98,7 @@
                         <p
                           x-text="product.selected_or_first_available_variant && options_by_name[option]?.values[variantKey]?.color"
                         ></p>
+                        <p x-text="JSON.stringify(options_by_name[option])"></p>
                         <input
                           li-element="product-option-input"
                           type="radio"
