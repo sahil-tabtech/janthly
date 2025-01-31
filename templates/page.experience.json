@@ -40,12 +40,46 @@
         "url_experience_button_link": "",
         "text_experience_button_text": "View All"
       }
+    },
+    "experience_FBxBPj": {
+      "type": "experience",
+      "settings": {
+        "text_experience_point_one_number": "4",
+        "text_experience_point_one_heading": "Attention to Detail",
+        "text_experience_point_one_text": "the art of attire. We epitomize the ethos of old-money style, weaving a narrative of understated class and an during refinement into every garment.",
+        "text_experience_point_two_number": "5",
+        "text_experience_point_two_heading": "Your Style, Your Way",
+        "text_experience_point_two_text": "the art of attire. We epitomize the ethos of old-money style, weaving a narrative of understated class and an during refinement into every garment.",
+        "text_experience_point_third_number": "6",
+        "text_experience_point_third_heading": "Expert Craftsmanship",
+        "text_experience_point_third_text": "the art of attire. We epitomize the ethos of old-money style, weaving a narrative of understated class and an during refinement into every garment.",
+        "url_experience_button_link": "",
+        "text_experience_button_text": "View All"
+      }
+    },
+    "experience_reverse_agNWtY": {
+      "type": "experience_reverse",
+      "settings": {
+        "text_experience_point_one_number": "4",
+        "text_experience_point_one_heading": "Attention to Detail",
+        "text_experience_point_one_text": "the art of attire. We epitomize the ethos of old-money style, weaving a narrative of understated class and an during refinement into every garment.",
+        "text_experience_point_two_number": "5",
+        "text_experience_point_two_heading": "Your Style, Your Way",
+        "text_experience_point_two_text": "the art of attire. We epitomize the ethos of old-money style, weaving a narrative of understated class and an during refinement into every garment.",
+        "text_experience_point_third_number": "6",
+        "text_experience_point_third_heading": "Expert Craftsmanship",
+        "text_experience_point_third_text": "the art of attire. We epitomize the ethos of old-money style, weaving a narrative of understated class and an during refinement into every garment.",
+        "url_experience_button_link": "",
+        "text_experience_button_text": "View All"
+      }
     }
   },
   "layout": "page",
   "wrapper": "main.main-wrapper",
   "order": [
     "experience",
-    "experience_reverse_4TJmqx"
+    "experience_reverse_4TJmqx",
+    "experience_FBxBPj",
+    "experience_reverse_agNWtY"
   ]
 }
