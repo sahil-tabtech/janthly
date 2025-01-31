@@ -91,10 +91,10 @@
                       :key="variantName"
                     >
                       <label li-element="product-option-loop" class="product-header_radio w-radio">
-                        <!-- Swatch (Color Circle) -->
+                        <!-- Swatch (Using Variant Name as Color) -->
                         <div
                           class="product-header_radio-button w-radio-input"
-                          :style="'background-color: ' + (product.selected_or_first_available_variant && product.selected_or_first_available_variant.metafields?.[variantName]?.color || 'blue') + '; width: 30px; height: 30px; border-radius: 50%; display: inline-block; border: 1px solid #ddd;'"
+                          :style="'background-color: ' + variantName.toLowerCase() + '; width: 30px; height: 30px; border-radius: 50%; display: inline-block; border: 1px solid #ddd;'"
                         ></div>
 
                         <!-- Hidden Radio Input -->
