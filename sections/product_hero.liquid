@@ -95,10 +95,9 @@
                           class="w-form-formradioinput w-form-formradioinput--inputType-custom product-header_radio-button w-radio-input"
                           :style="'background-color: ' + (product.selected_or_first_available_variant && options_by_name[option]?.option?.values[variantKey]?.color || 'red')"
                         ></div>
-                        <p>
-                          {product.selected_or_first_available_variant &&
-                          options_by_name[option]?.option?.values[variantKey]?.color}
-                        </p>
+                        <p
+                          x-text="product.selected_or_first_available_variant && options_by_name[option]?.values[variantKey]?.color"
+                        ></p>
                         <input
                           li-element="product-option-input"
                           type="radio"
