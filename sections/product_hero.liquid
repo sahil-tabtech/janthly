@@ -159,7 +159,7 @@
       <div class="product-header_description">
         <div class="product-details-accordion">
           <div
-            x-text="product.metafields?.custom?.First || 'Placeholder value'"
+            x-text="product.metafields?.custom?.First.value || 'Placeholder value'"
             li-object:="product.metafields.custom.First"
             class="text-style-nowrap"
           ></div>
