@@ -14,6 +14,7 @@
         "type": "header",
         "settings": {
           "url_home_link": "/",
+          "image_nav_logo": "shopify://shop_images/logo.svg",
           "collection_search_bestseller": "",
           "collection_search_bestseller_limit": 6
         }

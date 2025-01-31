@@ -12,7 +12,8 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "text_hero_text": "A contemporary label committed to a clear state-of-the art of attire. We epitomize the ethos of old-money style, weaving a narrative of understated class and enduring refinement into every garment."
+        "text_hero_text": "A contemporary label committed to a clear state-of-the art of attire. We epitomize the ethos of old-money style, weaving a narrative of understated class and enduring refinement into every garment.",
+        "image_hero_image": "shopify://shop_images/1237445.jpg"
       }
     },
     "hero_links": {
@@ -65,6 +66,7 @@
         "text_showcase_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
         "url_explore_more_link": "",
         "text_explore_more": "Button Text",
+        "url_showcase_video_url": "",
         "text_showcase_video_title": "Lorem Ipsum"
       }
     }
