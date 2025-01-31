@@ -66,8 +66,7 @@
         "text_showcase_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
         "url_explore_more_link": "",
         "text_explore_more": "Button Text",
-        "url_showcase_video_url": "",
-        "text_showcase_video_title": "Lorem Ipsum"
+        "showcaseVideo": "shopify://files/videos/Tabtech BTS showcase - Made with Clipchamp.mp4"
       }
     }
   },
