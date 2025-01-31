@@ -27,6 +27,11 @@
     "category_collection": {
       "type": "category_collection",
       "settings": {
+        "text_heading_1": "All",
+        "text_heading_2": "Shirts",
+        "text_heading_3": "Suits",
+        "text_heading_4": "Trousers",
+        "text_heading_5": "Vests",
         "collection_collection": "shirts",
         "collection_collection_limit": 6,
         "collection_collection_1": "shirts",
