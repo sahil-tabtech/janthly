@@ -1,4 +1,4 @@
-<div data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=4&intent=related" class="padding-global padding-section-medium product-recommendations"><div class="headline-wrapper"><h2 class="text-size-regular">
+<div data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=4&intent=related" class="padding-global product-recommendations"><div class="headline-wrapper"><h2 class="text-size-regular">
 {{ section.settings.text_headline }}
 </h2>
 </div></div><div class="product_list-wrapper"><ul role="list" class="product_list w-list-unstyled">{% for product in recommendations.products %}    <li li-for="product in recommendations.products" class="product_list-item">

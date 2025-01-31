@@ -1,169 +1,53 @@
-<div class="product-header_component">
-  <script src="{{ 'liquify_custom.js' | asset_url }}" type="text/javascript"></script>
-  <div
-    li-element="product-variant-container"
-    class="w-layout-grid product-header_layout"
-    x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})"
-    x-init="$nextTick(() => { activateVariants() })"
-    data-productid="{{ product.id }}"
-    @setbundleitem.window="updateBundleItem($event.detail.product, $event.detail.quantity)"
-  >
-    <div id="w-node-_3d8f5a35-113b-2fa5-079f-255edcebba5c-568c2553" class="padding-global">
-      <div id="w-node-dde72f15-2dd1-3c3f-ef72-b299bc1979d2-568c2553" class="swiper-container is-product-gallery">
-        <div class="swiper is-product-gallery">
-          <div id="my-gallery" class="swiper-wrapper is-product-gallery">
-            {% for image in product.images %}
-              <div li-for="image in product.images" class="swiper-slide is-product-gallery">
-                <div class="product-header_gallery-lightbox">
-                  <img
-                    loading="lazy"
-                    li-object:src="image.src | product_img_url: 'master'"
-                    li-object:alt="image.alt"
-                    src="{{ image.src | product_img_url: 'master' }}"
-                    alt="{{ image.alt }}"
-                    class="product-header_gallery-image"
-                  >
-                </div>
-              </div>
-            {% endfor %}
-          </div>
-        </div>
-        <div class="product-header_slider-wrapper hide">
-          <div class="swiper_button-wrapper is-product-slider pointer-events-off z-index-1 hide-mobile-landscape">
-            <a aria-label="Previous Slide" href="#" class="swiper_button swiper-prev pointer-events-on w-inline-block">
-              <div class="swiper_button-icon is-reversed w-embed">
-                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 29.541 22.323">
-                  <g id="Group_44" data-name="Group 44" transform="translate(0 1.014)"><path id="Path_1" data-name="Path 1" d="M115.445,20.633l9.311-10.148L115.445.338" transform="translate(-97.25 -0.338)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"></path><line id="Line_1" data-name="Line 1" x1="27.506" transform="translate(0 10.148)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"></line></g>
-                </svg>
-              </div></a
-            ><a aria-label="Next Slide" href="#" class="swiper_button swiper-next pointer-events-on w-inline-block">
-              <div class="swiper_button-icon w-embed">
-                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 29.541 22.323">
-                  <g id="Group_44" data-name="Group 44" transform="translate(0 1.014)"><path id="Path_1" data-name="Path 1" d="M115.445,20.633l9.311-10.148L115.445.338" transform="translate(-97.25 -0.338)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"></path><line id="Line_1" data-name="Line 1" x1="27.506" transform="translate(0 10.148)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"></line></g>
-                </svg>
-              </div>
-            </a>
-          </div>
-          <div class="swiper is-product-thumbnail">
-            <div class="swiper-wrapper is-product-thumbnail">
-              {% for image in product.images %}
-                <div li-for="image in product.images" class="swiper-slide is-product-thumbnail">
-                  <img
-                    loading="lazy"
-                    li-object:src="image.src | product_img_url: 'master'"
-                    li-object:alt="image.alt"
-                    src="{{ image.src | product_img_url: 'master' }}"
-                    alt="{{ image.alt }}"
-                    class="product_thumbnail-image"
-                  >
-                </div>
-              {% endfor %}
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide is-product-thumbnail is-active hide"></div>
-      </div>
-    </div>
-    <div id="w-node-_7048b639-be81-c25f-3e39-a62262971160-568c2553" class="product-header_product-details">
-      <div class="product-header_wrapper">
-        <h1 li-object:text="product.title" class="heading-style-h4">
-          {{ product.title }}
-        </h1>
-        <div class="save-btn">
-          <img
-            src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg"
-            loading="lazy"
-            alt=""
-            class="save-icon"
-          >
-        </div>
-      </div>
-      <div class="product-header_form-block w-form">
-        {% form 'product', product, class: 'product-header_default-state' %}
-          {% if product.has_only_default_variant != true %}
-            <div li-if="product.has_only_default_variant != true" class="product-header_option-list">
-              <template x-for="(option, optionKey) in product.options" :key="optionKey">
-                <div li-element="product-options-loop" class="product-header_option" data-ProductVariantsLoop="true">
-                  <div li-element="product-options-name" x-text="option">Variant</div>
-                  <div class="product-header_radio-list">
-                    <template
-                      x-for="(variantName, variantKey) in options_by_name[option].option.values"
-                      :key="variantName"
-                    >
-                      <label li-element="product-option-loop" class="product-header_radio w-radio">
-                        <div
-                          class="w-form-formradioinput w-form-formradioinput--inputType-custom product-header_radio-button w-radio-input"
-                          style="background-color: {{ color_value }};"
-                        ></div>
-                        <input
-                          type="radio"
-                          li-element="product-option-input"
-                          style="opacity:0;position:absolute;z-index:-1"
-                          x-on:click="setVariant"
-                          :name="option"
-                          :data-name="option"
-                          :value="variantName"
-                          :id="variantName.toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]+/g, '').replace(/--+/g, '-')"
-                          :checked="selected_or_first_available_variant?.options.includes(variantName)"
-                          data-selectorType="radio"
-                          :class="firstOptionHasAvailableChildren[variantName] ? '' : 'data-disabled'"
-                        >
-                        <span
-                          li-element="product-option-name"
-                          class="hide w-form-label"
-                          for="radio"
-                          x-text="variantName"
-                          :for="variantName"
-                          >XS</span
-                        ></label
-                      ></template
-                    >
-                  </div>
-                </div>
-              </template>
-            </div>
-          {% endif %}
-          <div class="product-header_price-wrapper">
-            <div
-              li-js-price="price"
-              class="text-size-large"
-              x-text="LiquifyHelper.moneyFormat(price, true, '{{ shop.money_with_currency_format }}')"
-            >
-              $55
-            </div>
-          </div>
-          <div class="product-header_add-to-cart-wrapper">
-            <template x-if="selected_or_first_available_variant.available">
-              <div li-js-if="selected_or_first_available_variant.available" class="product-header_buy-wrappper">
-                <a
-                  li-element="add-to-cart"
-                  href="#"
-                  class="button max-width-full w-button"
-                  @click="addToCart(true)"
-                  :disabled="!addToCartButton"
-                  >Add to cart</a
-                >
-              </div>
-            </template>
-            <template x-if="!selected_or_first_available_variant.available">
-              <div li-js-if="!selected_or_first_available_variant.available" class="product-header_out-of-stock">
-                <a href="#" class="button is-secondary max-width-full pointer-events-off w-button">Not in Stock</a>
-              </div>
-            </template>
-          </div>
-        {% endform %}
-        <div class="hide w-form-done"><div>Thank you! Your submission has been received!</div></div>
-        <div class="hide w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div>
-      </div>
-      <div class="product-header_description">
-        <h2 class="heading-style-h3">
-          {{ section.settings.text_headline }}
-        </h2>
-        <div li-object="product.description" class="text-rich-text max-width-large w-richtext">
-          {{ product.description }}
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="product-header_component"><script src="{{ 'liquify_custom.js' | asset_url }}" type="text/javascript"></script>
+<div li-element="product-variant-container" class="w-layout-grid product-header_layout" x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})" x-init="$nextTick(() => { activateVariants() })" data-productid="{{ product.id }}" @setbundleitem.window="updateBundleItem($event.detail.product, $event.detail.quantity)"><div id="w-node-_3d8f5a35-113b-2fa5-079f-255edcebba5c-568c2553" class="padding-global"><div id="w-node-dde72f15-2dd1-3c3f-ef72-b299bc1979d2-568c2553" class="swiper-container is-product-gallery"><div class="swiper is-product-gallery"><div id="my-gallery" class="swiper-wrapper is-product-gallery">{% for image in product.images %}    <div li-for="image in product.images" class="swiper-slide is-product-gallery">
+                                    
+                            <div class="product-header_gallery-lightbox"><img loading="lazy" li-object:src="image.src | product_img_url: 'master'" li-object:alt="image.alt" src="{{ image.src | product_img_url: 'master' }}" alt="{{ image.alt }}" class="product-header_gallery-image">
 </div>
-{% schema %} {"tag":"div","name":"Product-Hero","class":"section_product-header","settings":[{"id":"text_headline","type":"text","label":"Headline","default":"Description"}],"presets":[{"name":"Product-Hero","category":"Liquify"}]} {% endschema %}
+                            
+                        </div>
+{% endfor %}</div></div><div class="product-header_slider-wrapper hide"><div class="swiper_button-wrapper is-product-slider pointer-events-off z-index-1 hide-mobile-landscape"><a aria-label="Previous Slide" href="#" class="swiper_button swiper-prev pointer-events-on w-inline-block"><div class="swiper_button-icon is-reversed w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 29.541 22.323"><g id="Group_44" data-name="Group 44" transform="translate(0 1.014)"><path id="Path_1" data-name="Path 1" d="M115.445,20.633l9.311-10.148L115.445.338" transform="translate(-97.25 -0.338)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"></path><line id="Line_1" data-name="Line 1" x1="27.506" transform="translate(0 10.148)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"></line></g></svg></div></a><a aria-label="Next Slide" href="#" class="swiper_button swiper-next pointer-events-on w-inline-block"><div class="swiper_button-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 29.541 22.323"><g id="Group_44" data-name="Group 44" transform="translate(0 1.014)"><path id="Path_1" data-name="Path 1" d="M115.445,20.633l9.311-10.148L115.445.338" transform="translate(-97.25 -0.338)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"></path><line id="Line_1" data-name="Line 1" x1="27.506" transform="translate(0 10.148)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"></line></g></svg></div></a></div><div class="swiper is-product-thumbnail"><div class="swiper-wrapper is-product-thumbnail">{% for image in product.images %}    <div li-for="image in product.images" class="swiper-slide is-product-thumbnail">
+                                    <img loading="lazy" li-object:src="image.src | product_img_url: 'master'" li-object:alt="image.alt" src="{{ image.src | product_img_url: 'master' }}" alt="{{ image.alt }}" class="product_thumbnail-image">
+
+                        </div>
+{% endfor %}</div></div></div><div class="swiper-slide is-product-thumbnail is-active hide"></div></div></div><div id="w-node-_7048b639-be81-c25f-3e39-a62262971160-568c2553" class="product-header_product-details"><div class="product-header_wrapper"><h1 li-object:text="product.title" class="heading-style-h4">
+{{ product.title }}
+</h1><div class="save-btn"><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="save-icon">
+</div></div><div class="product-header_form-block w-form">{% form 'product', product, class: 'product-header_default-state' %}
+{% if product.has_only_default_variant != true %}    <div li-if="product.has_only_default_variant != true" class="product-header_option-list">
+    <template x-for="(option, optionKey) in product.options" :key="optionKey">
+    <div li-element="product-options-loop" class="product-header_option" data-ProductVariantsLoop="true"><div li-element="product-options-name" x-text="option">Variant</div><div class="product-header_radio-list"><template x-for="(variantName, variantKey) in options_by_name[option].option.values" :key="variantName">
+    <label li-element="product-option-loop" class="product-header_radio w-radio"><div class="w-form-formradioinput w-form-formradioinput--inputType-custom product-header_radio-button w-radio-input"></div><input type="radio" required="" li-element="product-option-input" style="opacity:0;position:absolute;z-index:-1" x-on:click="setVariant" :name="option" :data-name="option" :value="variantName" :id="variantName.toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]+/g, '').replace(/--+/g, '-')" :checked="selected_or_first_available_variant?.options.includes(variantName)" data-selectorType="radio" :class="firstOptionHasAvailableChildren[variantName] ? '' : 'data-disabled'">
+<span li-element="product-option-name" class="hide w-form-label" for="radio" x-text="variantName" :for="variantName">XS</span></label></template>
+</div></div></template>
+    </div>
+{% endif %}<div class="product-header_price-wrapper"><div li-js-price="price" class="text-size-large" x-text="LiquifyHelper.moneyFormat(price, true, '{{ shop.money_with_currency_format }}')">$55</div></div><div class="product-header_add-to-cart-wrapper"><template x-if="selected_or_first_available_variant.available">
+            <div li-js-if="selected_or_first_available_variant.available" class="product-header_buy-wrappper">
+        <a li-element="add-to-cart" href="#" class="button max-width-full w-button" @click="addToCart(true)" :disabled="!addToCartButton">Add to cart</a>        </div>
+    </template>
+<template x-if="!selected_or_first_available_variant.available">
+            <div li-js-if="!selected_or_first_available_variant.available" class="product-header_out-of-stock">
+        <a href="#" class="button is-secondary max-width-full pointer-events-off w-button">Not in Stock</a>        </div>
+    </template>
+</div>{% endform %}
+<div class="hide w-form-done"><div>Thank you! Your submission has been received!</div></div><div class="hide w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div></div><div class="product-header_description"><div class="product-details-accordion"><div li-object:="product.metafields.custom.first" class="text-style-nowrap">Placeholder value</div><div class="product-acc_icon w-embed"><svg width="100%" height="100%" viewbox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.8333V10H11V5H12V10H18V10.8333H12V15.8333H11V10.8333H5Z" fill="black"></path></svg></div><div li-object:="product.metafields.custom.firstVal" class="product-acc_value">is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div></div><div class="product-details-accordion"><div li-object:="product.metafields.custom.first" class="text-style-nowrap">Placeholder value</div><div class="product-acc_icon w-embed"><svg width="100%" height="100%" viewbox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.8333V10H11V5H12V10H18V10.8333H12V15.8333H11V10.8333H5Z" fill="black"></path></svg></div><div li-object:="product.metafields.custom.firstVal" class="product-acc_value">is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div></div><div class="hide w-embed w-script"><script>document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".product-acc_icon").forEach(icon => {
+        icon.addEventListener("click", function () {
+            // Hide all "product-acc_value" elements
+            document.querySelectorAll(".product-acc_value").forEach(value => {
+                value.style.display = "none";
+            });
+            // Show only the sibling "product-acc_value" of the clicked icon
+            let siblingValue = this.nextElementSibling;
+            if (siblingValue && siblingValue.classList.contains("product-acc_value")) {
+                siblingValue.style.display = "block";
+            }
+            // Hide all icons
+            document.querySelectorAll(".product-acc_icon").forEach(icon => {
+                icon.style.display = "";
+            });
+            // Hide the clicked icon
+            this.style.display = "none";
+        });
+    });
+});
+</script></div></div></div></div></div> {% schema %} {"tag":"div","name":"Product-Hero","class":"section_product-header","presets":[{"name":"Product-Hero","category":"Liquify"}]} {% endschema %}
