@@ -9,19 +9,19 @@
  */
 {
   "sections": {
-    "list_collection_hero": {
-      "type": "list_collection_hero",
+    "category_hero": {
+      "type": "category_hero",
       "settings": {}
     },
-    "list_collection": {
-      "type": "list_collection",
+    "category_collection": {
+      "type": "category_collection",
       "settings": {}
     }
   },
   "layout": "list-collections",
   "wrapper": "main.main-wrapper",
   "order": [
-    "list_collection_hero",
-    "list_collection"
+    "category_hero",
+    "category_collection"
   ]
 }
