@@ -11,11 +11,35 @@
   "sections": {
     "category_hero": {
       "type": "category_hero",
-      "settings": {}
+      "settings": {
+        "text_heading_1": "All",
+        "text_description_1": "the art of attire. We epitomize the ethos of old-money style, weaving a narrative of understated class and enduring refinement into every garment.",
+        "text_heading_2": "Shirts",
+        "text_description_2": "the art of attire. We epitomize the ethos of old-money style, weaving a narrative of understated class and enduring refinement into every garment.",
+        "text_heading_3": "Suits",
+        "text_description_3": "the art of attire. We epitomize the ethos of old-money style, weaving a narrative of understated class and enduring refinement into every garment.",
+        "text_heading_4": "Trousers",
+        "text_description_4": "the art of attire. We epitomize the ethos of old-money style, weaving a narrative of understated class and enduring refinement into every garment.",
+        "text_heading_5": "Vests",
+        "text_description_5": "the art of attire. We epitomize the ethos of old-money style, weaving a narrative of understated class and enduring refinement into every garment."
+      }
     },
     "category_collection": {
       "type": "category_collection",
-      "settings": {}
+      "settings": {
+        "collection_collection": "shirts",
+        "collection_collection_limit": 6,
+        "collection_collection_1": "shirts",
+        "collection_collection_1_limit": 6,
+        "collection_collection_2": "shirts",
+        "collection_collection_2_limit": 6,
+        "collection_collection_3": "shirts",
+        "collection_collection_3_limit": 6,
+        "collection_collection_4": "shirts",
+        "collection_collection_4_limit": 6,
+        "collection_collection_5": "shirts",
+        "collection_collection_5_limit": 6
+      }
     }
   },
   "layout": "list-collections",
