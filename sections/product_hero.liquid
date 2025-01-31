@@ -91,13 +91,10 @@
                       :key="variantName"
                     >
                       <label li-element="product-option-loop" class="product-header_radio w-radio">
-                        <!-- Swatch (Using Variant Name as Color) -->
                         <div
-                          class="product-header_radio-button w-radio-input"
-                          :style="'background-color: ' + variantName.toLowerCase() + '; width: 30px; height: 30px; border-radius: 50%; display: inline-block; border: 1px solid #ddd;'"
+                          class="w-form-formradioinput w-form-formradioinput--inputType-custom product-header_radio-button w-radio-input"
+                          :style="'background-color: ' + variantName.toLowerCase()"
                         ></div>
-
-                        <!-- Hidden Radio Input -->
                         <input
                           li-element="product-option-input"
                           type="radio"
@@ -112,50 +109,18 @@
                           data-selectorType="radio"
                           :class="firstOptionHasAvailableChildren[variantName] ? '' : 'data-disabled'"
                         >
-
-                        <!-- Variant Label -->
                         <span
                           li-element="product-option-name"
                           class="w-form-label"
+                          for="radio"
                           x-text="variantName"
                           :for="variantName"
-                          style="margin-left: 10px;"
-                        ></span>
-                      </label>
-                    </template>
+                          >XS</span
+                        ></label
+                      ></template
+                    >
                   </div>
                 </div>
-                <label li-element="product-option-loop" class="product-header_radio w-radio">
-                  <!-- Swatch (Color Circle) -->
-                  <div
-                    class="w-form-formradioinput w-form-formradioinput--inputType-custom product-header_radio-button w-radio-input"
-                    :style="'background-color: ' + (options_by_name[option].option.metafields?.[variantName]?.color || 'transparent')"
-                  ></div>
-
-                  <!-- Hidden Radio Input -->
-                  <input
-                    li-element="product-option-input"
-                    type="radio"
-                    required=""
-                    style="opacity:0;position:absolute;z-index:-1"
-                    x-on:click="setVariant"
-                    :name="option"
-                    :data-name="option"
-                    :value="variantName"
-                    :id="variantName.toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]+/g, '').replace(/--+/g, '-')"
-                    :checked="selected_or_first_available_variant?.options.includes(variantName)"
-                    data-selectorType="radio"
-                    :class="firstOptionHasAvailableChildren[variantName] ? '' : 'data-disabled'"
-                  >
-
-                  <!-- Swatch Label (Text) -->
-                  <span
-                    li-element="product-option-name"
-                    class="w-form-label"
-                    x-text="variantName"
-                    :for="variantName"
-                  ></span>
-                </label>
               </template>
             </div>
           {% endif %}
