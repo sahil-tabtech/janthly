@@ -60,8 +60,6 @@
 }
 <style></style><script src="{{ '_helper.js' | asset_url }}" type="text/javascript"></script>{{ content_for_header }}</head>
 <body li-page="list-collections">
-  <div class="page-wrapper">{% render 'global_styles' %}
-{% section 'header' %}
- {{ content_for_layout }} {% section 'footer' %}
+{{ content_for_layout }}
 </body>
 </html>
