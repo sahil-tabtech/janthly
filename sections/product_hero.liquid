@@ -157,6 +157,7 @@
         <div class="hide w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div>
       </div>
       <div class="product-header_description">
+        <p x-text="JSON.stringify(product.metafields.custom)"></p>
         <div class="product-details-accordion">
           <div
             x-text="product.metafields?.custom?.First || 'Placeholder value'"
