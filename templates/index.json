@@ -54,10 +54,10 @@
       "type": "tuxedos_section",
       "settings": {
         "text_showcase_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
-        "url_view_all": "",
+        "url_view_all": "shopify://collections/shirts",
         "text_view_all": "Button Text",
         "collection_collection": "shirts",
-        "collection_collection_limit": 6
+        "collection_collection_limit": 5
       }
     },
     "video_showcase": {
