@@ -93,7 +93,7 @@
                       <label li-element="product-option-loop" class="product-header_radio w-radio">
                         <div
                           class="w-form-formradioinput w-form-formradioinput--inputType-custom product-header_radio-button w-radio-input"
-                          style="'background-color:'+ {{product.selected_or_first_available_variant.metafields.custom.color}} "
+                          :style="'background-color: ' + (variantName.includes('#') ? variantName : variantName.toLowerCase().replace(/\s+/g, '-'))"
                           ;
                         ></div>
                         <input
