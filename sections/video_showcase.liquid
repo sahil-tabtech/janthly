@@ -13,7 +13,20 @@
   </div>
   <div id="w-node-e8fc5c32-91a0-e654-63dd-660eb166819d-568c24db" class="section_three-col width-twice">
     <div class="padding-global">
-      <div class="showcase-video w-embed">{{ section.settings.showcaseVideo }}</div>
+      <div class="showcase-video w-embed">
+        {% if section.settings.showcaseVideo %}
+          <iframe
+            src="{{ section.settings.showcaseVideo }}"
+            frameborder="0"
+            allowfullscreen
+            width="100%"
+            height="100%"
+          >
+          </iframe>
+        {% else %}
+          <p>No video available</p>
+        {% endif %}
+      </div>
     </div>
   </div>
 </div>
