@@ -1,69 +1,35 @@
-<div class="padding-global padding-section-medium">
-  <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100" class="w-tabs">
-    <div class="hide w-tab-menu">
-      <a data-w-tab="Tab 1" id="all-collections" class="w-inline-block w-tab-link w--current"><div>Tab 1</div></a
-      ><a data-w-tab="Tab 2" id="shirts" class="w-inline-block w-tab-link"><div>Tab 2</div></a
-      ><a data-w-tab="Tab 3" id="suits" class="w-inline-block w-tab-link"><div>Tab 3</div></a
-      ><a data-w-tab="Tab 4" id="trousers" class="w-inline-block w-tab-link"><div>Tab 4</div></a
-      ><a data-w-tab="Tab 5" id="vests" class="w-inline-block w-tab-link"><div>Tab 5</div></a>
-    </div>
-    <div class="w-tab-content">
-      <div data-w-tab="Tab 1" class="w-tab-pane w--tab-active">
-        <div class="collection-text-wrapper">
-          <div class="text-size-regular">175 items</div>
-          <h1 class="heading-style-h1">
-            {{ section.settings.text_heading_1 }}
-          </h1>
-          <p class="text-size-regular">
-            {{ section.settings.text_description_1 }}
-          </p>
-        </div>
-      </div>
-      <div data-w-tab="Tab 2" class="w-tab-pane">
-        <div class="collection-text-wrapper">
-          <div class="text-size-regular">175 items</div>
-          <h1 class="heading-style-h1">
-            {{ section.settings.text_heading_2 }}
-          </h1>
-          <p class="text-size-regular">
-            {{ section.settings.text_description_2 }}
-          </p>
-        </div>
-      </div>
-      <div data-w-tab="Tab 3" class="w-tab-pane">
-        <div class="collection-text-wrapper">
-          <div class="text-size-regular">175 items</div>
-          <h1 class="heading-style-h1">
-            {{ section.settings.text_heading_3 }}
-          </h1>
-          <p class="text-size-regular">
-            {{ section.settings.text_description_3 }}
-          </p>
-        </div>
-      </div>
-      <div data-w-tab="Tab 4" class="w-tab-pane">
-        <div class="collection-text-wrapper">
-          <div class="text-size-regular">175 items</div>
-          <h1 class="heading-style-h1">
-            {{ section.settings.text_heading_4 }}
-          </h1>
-          <p class="text-size-regular">
-            {{ section.settings.text_description_4 }}
-          </p>
-        </div>
-      </div>
-      <div data-w-tab="Tab 5" class="w-tab-pane">
-        <div class="collection-text-wrapper">
-          <div class="text-size-regular">175 items</div>
-          <h1 class="heading-style-h1">
-            {{ section.settings.text_heading_5 }}
-          </h1>
-          <p class="text-size-regular">
-            {{ section.settings.text_description_5 }}
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-{% schema %} {"tag":"header","name":"Category Hero","class":"section_small-hero","settings":[{"id":"text_heading_1","type":"text","label":"Heading 1","default":"All"},{"id":"text_description_1","type":"text","label":"Description 1","default":"the art of attire. We epitomize the ethos of old-money style, weaving a narrative of understated class and enduring refinement into every garment."},{"id":"text_heading_2","type":"text","label":"Heading 2","default":"Shirts"},{"id":"text_description_2","type":"text","label":"Description 2","default":"the art of attire. We epitomize the ethos of old-money style, weaving a narrative of understated class and enduring refinement into every garment."},{"id":"text_heading_3","type":"text","label":"Heading 3","default":"Suits"},{"id":"text_description_3","type":"text","label":"Description 3","default":"the art of attire. We epitomize the ethos of old-money style, weaving a narrative of understated class and enduring refinement into every garment."},{"id":"text_heading_4","type":"text","label":"Heading 4","default":"Trousers"},{"id":"text_description_4","type":"text","label":"Description 4","default":"the art of attire. We epitomize the ethos of old-money style, weaving a narrative of understated class and enduring refinement into every garment."},{"id":"text_heading_5","type":"text","label":"Heading 5","default":"Vests"},{"id":"text_description_5","type":"text","label":"Description 5","default":"the art of attire. We epitomize the ethos of old-money style, weaving a narrative of understated class and enduring refinement into every garment."}],"presets":[{"name":"Category Hero","category":"Liquify"}]} {% endschema %}
+<div class="padding-global padding-section-medium"><div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100" class="w-tabs"><div class="hide w-tab-menu"><a data-w-tab="Tab 1" id="all-collections" class="w-inline-block w-tab-link w--current"><div>Tab 1</div></a><a data-w-tab="Tab 2" id="shirts" class="w-inline-block w-tab-link"><div>Tab 2</div></a><a data-w-tab="Tab 3" id="suits" class="w-inline-block w-tab-link"><div>Tab 3</div></a><a data-w-tab="Tab 4" id="trousers" class="w-inline-block w-tab-link"><div>Tab 4</div></a><a data-w-tab="Tab 5" id="vests" class="w-inline-block w-tab-link"><div>Tab 5</div></a></div><div class="w-tab-content"><div data-w-tab="Tab 1" class="w-tab-pane w--tab-active"><div class="collection-text-wrapper"><div class="text-size-regular"><span li-object:text="collection.all_products_count">
+{{ collection.all_products_count }}
+</span>items</div><h1 class="heading-style-h1">
+{{ section.settings.text_heading_1 }}
+</h1>
+<p class="text-size-regular">
+{{ section.settings.text_description_1 }}
+</p>
+</div></div><div data-w-tab="Tab 2" class="w-tab-pane"><div class="collection-text-wrapper"><div class="text-size-regular"><span li-object:text="collection.all_products_count">
+{{ collection.all_products_count }}
+</span>items</div><h1 class="heading-style-h1">
+{{ section.settings.text_heading_2 }}
+</h1>
+<p class="text-size-regular">
+{{ section.settings.text_description_2 }}
+</p>
+</div></div><div data-w-tab="Tab 3" class="w-tab-pane"><div class="collection-text-wrapper"><div class="text-size-regular">175 items</div><h1 class="heading-style-h1">
+{{ section.settings.text_heading_3 }}
+</h1>
+<p class="text-size-regular">
+{{ section.settings.text_description_3 }}
+</p>
+</div></div><div data-w-tab="Tab 4" class="w-tab-pane"><div class="collection-text-wrapper"><div class="text-size-regular">175 items</div><h1 class="heading-style-h1">
+{{ section.settings.text_heading_4 }}
+</h1>
+<p class="text-size-regular">
+{{ section.settings.text_description_4 }}
+</p>
+</div></div><div data-w-tab="Tab 5" class="w-tab-pane"><div class="collection-text-wrapper"><div class="text-size-regular">175 items</div><h1 class="heading-style-h1">
+{{ section.settings.text_heading_5 }}
+</h1>
+<p class="text-size-regular">
+{{ section.settings.text_description_5 }}
+</p>
+</div></div></div></div></div> {% schema %} {"tag":"header","name":"Category Hero","class":"section_small-hero","settings":[{"id":"text_heading_1","type":"text","label":"Heading 1","default":"All"},{"id":"text_description_1","type":"text","label":"Description 1","default":"the art of attire. We epitomize the ethos of old-money style, weaving a narrative of understated class and enduring refinement into every garment."},{"id":"text_heading_2","type":"text","label":"Heading 2","default":"Shirts"},{"id":"text_description_2","type":"text","label":"Description 2","default":"the art of attire. We epitomize the ethos of old-money style, weaving a narrative of understated class and enduring refinement into every garment."},{"id":"text_heading_3","type":"text","label":"Heading 3","default":"Suits"},{"id":"text_description_3","type":"text","label":"Description 3","default":"the art of attire. We epitomize the ethos of old-money style, weaving a narrative of understated class and enduring refinement into every garment."},{"id":"text_heading_4","type":"text","label":"Heading 4","default":"Trousers"},{"id":"text_description_4","type":"text","label":"Description 4","default":"the art of attire. We epitomize the ethos of old-money style, weaving a narrative of understated class and enduring refinement into every garment."},{"id":"text_heading_5","type":"text","label":"Heading 5","default":"Vests"},{"id":"text_description_5","type":"text","label":"Description 5","default":"the art of attire. We epitomize the ethos of old-money style, weaving a narrative of understated class and enduring refinement into every garment."}],"presets":[{"name":"Category Hero","category":"Liquify","blocks":[]}]} {% endschema %}
